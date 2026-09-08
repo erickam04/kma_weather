@@ -72,7 +72,7 @@ python run_elevation_compare.py
 python run_pipeline.py
 ```
 
-`run_pipeline.py`는 초기 다지점 평가 → 집계 → batch 그림 → 이웃 그림 → target 지도로 진행한다. `pipeline_config.py`의 `YEAR`, `TARGET_MODE`, `TARGET_LIST`, `METHODS`를 사용하며 현재 기본 methods는 4가지다. `--only batch`, `--skip batch` 등으로 단계를 선택한다. 지도 단계는 별도 지도 파일이 필요하다. 초기 자동 선정은 9개 target 후보 중 8개만 보간 가능한 기존 구성이다.
+`run_pipeline.py`는 초기 다지점 평가 → 집계 → batch 그림 → 이웃 그림 → target 지도로 진행한다. `pipeline_config.py`의 `YEAR`, `TARGET_MODE`, `TARGET_LIST`, `METHODS`를 사용하며 현재 기본 methods는 4가지다. `--only batch`, `--skip batch` 등으로 단계를 선택한다. 지도 단계는 별도 지도 파일이 필요하다.
 
 ## 전체망 생산과 후속 분석
 
@@ -89,7 +89,7 @@ python run_pipeline.py
 
 `stage1_produce.py --merge-only`는 이미 만든 part를 병합한다. SQLite의 조회용 집계표는 `new_query.py`가 필요할 때 생성하므로 해당 DB에는 쓰기 권한도 필요하다. 원자료를 바꾼 뒤 집계표를 재생성하려면 `new_query.build_agg_tables()`를 명시적으로 호출한다.
 
-시간대·고도 분석은 `analyze_elevation_hour_effect.py`, `analyze_elevation_hour_standard_metrics.py`, `analyze_elevation_continuous_metrics.py` 순으로 관련 입력을 준비한다. 기존 BIAS 요인표·시간별 BIAS·coverage·확정 코호트·SQLite 집계가 필요하다. 공개한 요약 CSV만으로 전체 중간 자료를 복원할 수는 없다.
+시간대·고도 분석은 `analyze_elevation_hour_effect.py`, `analyze_elevation_hour_standard_metrics.py`, `analyze_elevation_continuous_metrics.py` 순으로 관련 입력을 준비한다. 기존 BIAS 요인표·시간별 BIAS·coverage·확정 코호트·SQLite 집계가 필요하다. 해당 중간 자료는 저장소에 포함하지 않으므로 각 분석의 입력을 별도로 준비해야 한다.
 
 BIAS 후속 보고 runner는 기존 정본 CSV·문헌 map과 검증 manifest도 요구한다. 내부 보고서 자체와 그 전용 생성기는 저장소에 포함하지 않았다. 순수 계산 모듈과 합성 테스트는 원자료 없이 검토할 수 있지만, 내부 보고서 전체의 자동 재생성까지 지원하는 구성은 아니다.
 
