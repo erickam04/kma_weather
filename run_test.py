@@ -2,9 +2,9 @@ import os
 
 import pandas as pd
 
-from find_stations import load_station_meta
-from idw import TARGET_COLUMN, evaluate_idw, print_score
-from load_aws import prepare_evaluation_data
+from weather.find_stations import load_station_meta
+from weather.idw import TARGET_COLUMN, evaluate_idw, print_score
+from weather.load_aws import prepare_evaluation_data
 
 
 def parse_target_stations(target_input):

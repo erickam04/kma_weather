@@ -28,7 +28,7 @@ AWS 관측자료는 [기상청 API허브](https://apihub.kma.go.kr/), 관측소 
 
 메타데이터는 CP949로 읽는다. 다른 이름으로 저장했다면 `KMA_META_FILE` 환경변수 또는 로컬 설정의 `meta_file`에 파일 위치를 지정한다.
 
-관측 CSV는 `TM`(시각)과 `TA`(기온)가 필요하다. `kma.py`가 저장하는 파일은 `STN`과 다른 기상 항목도 포함한다. 파일명과 폴더명은 `Station_<지점>/AWS_YYYYMM.csv` 규칙을 따른다.
+관측 CSV는 `TM`(시각)과 `TA`(기온)가 필요하다. `weather/kma.py`가 저장하는 파일은 `STN`과 다른 기상 항목도 포함한다. 파일명과 폴더명은 `Station_<지점>/AWS_YYYYMM.csv` 규칙을 따른다.
 
 ## 경로 설정
 
