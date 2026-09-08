@@ -1,0 +1,5 @@
+{
+  "work_dir": "local_data",
+  "aws_dir": "WeatherData_AWS/stations",
+  "meta_file": "META_관측지점정보_20260517233143.csv"
+}

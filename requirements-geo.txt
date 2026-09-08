@@ -1,0 +1,5 @@
+# 지형 분류·해안 분석·대시보드 자료 준비에 필요한 선택 의존성
+-r requirements.txt
+shapely==2.1.2
+rasterio==1.4.4
+pyproj==3.8.0
